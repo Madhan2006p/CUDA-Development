@@ -19,5 +19,28 @@ All programs are compiled and executed on a **GPU-enabled Jupyter/Linux environm
 
 ---
 
-## 📁 Project Structure
+## ✅ Programs Implemented
+
+### 1️⃣ Hello World (CUDA)
+- Verifies CUDA installation and GPU execution
+- Launches a simple kernel on the GPU
+
+### 2️⃣ Vector Addition
+- Parallel addition of two arrays using GPU threads
+- Each thread processes one element
+
+### 3️⃣ Vector Subtraction
+- Parallel subtraction of two arrays
+- Demonstrates GPU memory allocation and data transfer
+
+---
+
+## 🧩 Sample CUDA Kernel
+
+```cpp
+__global__ void vecAdd(int *a, int *b, int *c, int n) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx < n)
+        c[idx] = a[idx] + b[idx];
+}
 
